@@ -1,3 +1,10 @@
+(function (img, name, text) {
+    var img = document.getElementById('customer-img').src = 'img/customer-0.jpg' ;
+    var name = document.getElementById('customer-name').innerHTML = "Martine";
+    var text = document.getElementById('customer-text').innerHTML = "Code whisperer";
+})(); 
+
+
 (function(){
     const customerImage = document.querySelector('#customer-img')
     const customerName = document.querySelector('#customer-name')
@@ -19,6 +26,13 @@
 
         customers.push(customer)
     }
+
+    document.addEventListener('open', ()=> {
+        let index = 0 
+        customerImage.src = customers[index].img
+        customerName.textContent = customers[index].name
+        customerText.textContent = customers[index].text     
+    })
 
     createCustomer(0, 'Martine', 'As zany as it gets.')
     createCustomer(1, 'Alexa', 'Ruler of all things good.')
